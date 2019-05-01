@@ -24,7 +24,7 @@ public class DroolsTest {
 
         PackageBuilder packageBuilder = new PackageBuilder();
 
-        String ruleFile = "/com/rule/Rules.drl";
+        String ruleFile = "/com/rules/Rules.drl";
         InputStream resourceAsStream = getClass().getResourceAsStream(ruleFile);
 
         Reader reader = new InputStreamReader(resourceAsStream);

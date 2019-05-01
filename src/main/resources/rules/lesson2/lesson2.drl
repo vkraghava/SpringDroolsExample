@@ -1,0 +1,17 @@
+package rules.lesson2;
+//list any import classes here.
+import com.example.accountproject.model.AccountingPeriod;
+import com.example.accountproject.model.CashFlow;
+import com.example.accountproject.model.Account;
+import com.example.accountproject.util.OutputDisplay;
+global OutputDisplay showResults;
+
+rule "Credit rule"
+
+    when
+           $cash :CashFlow(type == CashFlow.CREDIT )
+           $acc : Account(  )
+       then
+           $acc.setBalance($acc.getBalance()+$cash.getAmount());
+           showResults.showText("Account no "+$acc.getAccountno()+ " has now a balance of "+$acc.getBalance());
+end

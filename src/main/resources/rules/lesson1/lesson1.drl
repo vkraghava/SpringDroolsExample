@@ -1,0 +1,30 @@
+
+dialect  "mvel"
+import  com.example.accountproject.model.Account;
+import  com.example.accountproject.model.CashFlow;
+import  com.example.accountproject.util.OutputDisplay
+import com.example.accountproject.model.AccountingPeriod;
+
+global OutputDisplay showResults;
+
+rule "your first rule revisited"
+    when
+        Account()
+    then
+        showResults.showText("The account exists");
+end
+
+rule "your first rule revisited Accounting Period"
+    when
+        CashFlow ( )
+    then
+        showResults.showText("The CashFlow exists, inserting an accounting Period");
+        AccountingPeriod newPeriod = new AccountingPeriod();
+        insert(newPeriod);
+end
+rule "Rule on AccountingPeriod that are inserting"
+    when
+        AccountingPeriod ( )
+    then
+        showResults.showText("The accounting Period exists");
+end
