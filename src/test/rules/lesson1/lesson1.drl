@@ -1,0 +1,16 @@
+/*
+
+dialect  "mvel"
+import  com.example.accountproject.model.Account;
+import  com.example.accountproject.util.OutputDisplay;
+
+global OutputDisplay showResults;
+
+rule "your first rule"
+    when
+        Account()
+    then
+        showResults.showText("The account exists");
+end
+
+*/

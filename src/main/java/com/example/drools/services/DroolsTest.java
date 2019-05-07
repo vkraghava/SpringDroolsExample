@@ -1,3 +1,4 @@
+/*
 package com.example.drools.services;
 
 import java.io.IOException;
@@ -46,3 +47,4 @@ public class DroolsTest {
     }
 
 }
+*/
